@@ -1,0 +1,50 @@
+<%- include('../partials/header'); %>
+<div class="container">
+
+  <h1>New product</h1>
+  <p>For userId: <%= session.userId %></p>
+
+  <form enctype="multipart/form-data" method="POST">
+
+    <div class="mb-3">
+      <label for="nameInput" class="form-label">Name</label>
+      <input type="text" required name="name" class="form-control" id="nameInput">
+    </div>
+
+    <div class="mb-3">
+      <label for="priceInput" class="form-label">Price</label>
+      <input
+        type="number" required
+        min="0" value="0" step=".01"
+        name="price" class="form-control" id="priceInput">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="customFile">Image</label>
+      <input type="file" name="image" class="form-control" id="customFile" />
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="tags" value="motor" id="checkMotor">
+      <label class="form-check-label" for="checkMotor">Motor</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="tags" value="lifestyle" id="checkLifestyle">
+      <label class="form-check-label" for="checkLifestyle">Lifestyle</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="tags" value="mobile" id="checkMobile">
+      <label class="form-check-label" for="checkMobile">Mobile</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="tags" value="work" id="checkWork">
+      <label class="form-check-label" for="checkWork">Work</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+</div>
+
+<%- include('../partials/footer'); %>

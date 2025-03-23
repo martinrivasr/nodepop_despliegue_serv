@@ -1,0 +1,79 @@
+<%- include('./partials/header'); %>
+
+<div class="container">
+
+  <% // contenido para usuarios NO logados %>
+  <% if (!session.userId) { %>
+    <p><a href="/login">login</a> <%= __('to view content.')%></p>
+  <% } %>
+
+  <% // contenido para usuarios logados %>
+  <% if (session.userId) { %>
+    <h1><%= __('My Products')%></h1>
+
+    <table class="table table-hover">
+      <thead><tr>
+        <th><%= __('Name')%></th>
+        <th style="text-align: right"><%= __('Price')%></th>
+        <th><%= __('Image')%></th>
+        <th><%= __('Tags')%></th>
+        <th><%= __('Actions')%></th>
+      </tr></thead>
+      <tbody>
+      <% products.forEach(product => { %>
+        <tr>
+          <td><%= product.name %></td>
+          <td style="text-align: right"><%= product.price %>€</td>
+          <td><img src="/images/products/<%= product.image %>"></td>
+          <td><%= product.tags.join(', ') %></td>
+          <td>
+            <a href="/products/update/<%= product._id %>"><i class="bi bi-pencil"></i></a>
+            <a
+              onclick="confirmDelete('<%= product.name %>', '<%= product._id %>')"
+              href="javascript:void(0);">
+                <i class="bi bi-trash"></i>
+            </a>
+          </td>
+        </tr>
+      <% }) %>
+      </tbody>
+    </table>
+    <p>
+      total <%= totalCount %> <%= __('products')%>.
+    </p>
+    <p>
+      <!-- prev page -->
+      <% if (skipPrev >= 0) { %>
+        <a href="?limit=<%= pageSize %>&skip=<%= skipPrev %>">prev</a>
+      <% } else { %>
+        <span style="color: lightgray;"><%= __('prev')%></span>
+      <% } %>
+
+      <!-- next page -->
+      <% if (skipNext < totalCount) { %>
+        <a href="?limit=<%= pageSize %>&skip=<%= skipNext %>">next</a>
+      <% } else { %>
+        <span style="color: lightgray;"><%= __('next')%></span>
+      <% } %>
+    </p>
+  <% } %>
+</div>
+
+<script>
+  function confirmDelete(name, productId) {
+      if (confirm(`<%= __('Are you sure you want to delete product')%> "${name}"?`)) {
+          window.location.href = `/products/delete/${productId}`;
+      }
+  }
+</script>
+
+<style>
+  table {
+    min-height: 300px;
+  }
+  table tr td img {
+    max-height: 20px;
+  }
+</style>
+
+<%- include('./partials/footer'); %>

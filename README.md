@@ -22,6 +22,7 @@ Este segundo ejercicio es una aplicación construida con **React** en el fronten
 - **Usuario:** admin@test.com  
 - **Contraseña:** 1234
 
+El repositorio de la practica de react es: [https://github.com/martinrivasr/nodepop_react_V2.git](https://github.com/martinrivasr/nodepop_react_V2.git)
 ---
 
 Ambas aplicaciones fueron desplegadas en entornos Linux y configuradas con certificados SSL mediante Let's Encrypt para garantizar conexión segura. Los puertos y servicios fueron gestionados con buenas prácticas de seguridad, incluyendo redirecciones HTTPS y manejo de procesos de forma desacoplada del terminal.

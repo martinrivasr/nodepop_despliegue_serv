@@ -1,47 +1,28 @@
-<<<<<<< HEAD
-# Nodepop Fundamentos
+# Práctica de Despliegue de Servidores
 
-## Deploy
+## Ejercicio 1: Aplicación NodePop con MongoDB
 
-### Install dependencies
+**URL del proyecto:** [https://nodepop-node.martinrivasr.duckdns.org/](https://nodepop-node.martinrivasr.duckdns.org/)
 
-```sh
-npm install
-```
+Esta aplicación corresponde al primer ejercicio del despliegue de servidores. Utiliza **MongoDB** como sistema gestor de base de datos y está desplegada sobre una instancia Linux configurada con **Nginx** como servidor web y **Supervisor** como gestor de procesos.
 
-### Configure
+### Credenciales de acceso
+- **Usuario:** admin@example.com  
+- **Contraseña:** 1234
 
-Copy .env.example to .env and review your config.
+---
 
-### Init database
+## Ejercicio 2: Aplicación NodePop Frontend con React + Backend Node/SQLite
 
-```sh
-npm run initDB
-```
+**URL del proyecto:** [https://nodepop.martinrivasr.duckdns.org/login](https://nodepop.martinrivasr.duckdns.org/login)
 
-## Start
+Este segundo ejercicio es una aplicación construida con **React** en el frontend y un backend en **Node.js** utilizando **SQLite** como base de datos.
 
-To start a single instance:
+### Credenciales de acceso
+- **Usuario:** admin@test.com  
+- **Contraseña:** 1234
 
-```sh
-npm start
-```
+---
 
-To start in development mode:
+Ambas aplicaciones fueron desplegadas en entornos Linux y configuradas con certificados SSL mediante Let's Encrypt para garantizar conexión segura. Los puertos y servicios fueron gestionados con buenas prácticas de seguridad, incluyendo redirecciones HTTPS y manejo de procesos de forma desacoplada del terminal.
 
-```sh
-npm run dev
-```
-
-## References
-
-### UI fragments
-
-- https://getbootstrap.com/docs/5.3/examples/
-- https://getbootstrap.com/docs/5.3/examples/headers/
-- https://getbootstrap.com/docs/5.3/forms/form-control/
-- https://icons.getbootstrap.com/#install
-=======
-# nodepop_despliegue_serv
-this repo is to deploy react and exprerss nodepop apps.
->>>>>>> 29a8c35874e58ebcca96cb148597c284d4189a77

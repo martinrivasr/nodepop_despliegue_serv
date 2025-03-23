@@ -27,3 +27,8 @@ El repositorio de la practica de react es: [https://github.com/martinrivasr/node
 
 Ambas aplicaciones fueron desplegadas en entornos Linux y configuradas con certificados SSL mediante Let's Encrypt para garantizar conexión segura. Los puertos y servicios fueron gestionados con buenas prácticas de seguridad, incluyendo redirecciones HTTPS y manejo de procesos de forma desacoplada del terminal.
 
+### Documentación Swagger de la API (Ejercicio 2)
+
+Puedes probar la API del segundo ejercicio (Node.js con SQLite) directamente desde Swagger:
+
+🔗 [https://nodepop-api.martinrivasr.duckdns.org/swagger/](https://nodepop-api.martinrivasr.duckdns.org/swagger/)
